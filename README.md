@@ -15,15 +15,26 @@ npm install --save fl-modale
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'fl-modale'
+import Flmodale from 'fl-modale'
 import 'fl-modale/dist/index.css'
 
 class Example extends Component {
+  const data = {
+    style: {
+      modalBackground: rgba(0,0,0,.75)
+    }
+  }
+
   render() {
-    return <MyComponent />
+    return <Flmodale data={data} />
   }
 }
 ```
+
+## Configurations options
+|Key|Type|Default|Description|
+|-|-|-|-|
+|overlayBackground|`string`|rgba(0,0,0,.5)|Modal background color.<br>All HTML color format are allowed (names, RGB, HEX, HSL, RGBA, or HSLA)<br> - [W3C HTML color doc](https://www.w3schools.com/html/html_colors.asp)<br>- [W3C HTML color picker](https://www.w3schools.com/colors/colors_picker.asp)|
 
 ## License
 

@@ -1,10 +1,18 @@
-import React from 'react'
+import React from "react";
 
-import { ExampleComponent } from 'fl-modale'
-import 'fl-modale/dist/index.css'
+import { Flmodale } from "fl-modale";
+import "fl-modale/dist/index.css";
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  const data = {
+    style: {
+      overlayBackground: null
+    }
+  }
+
+  return (
+    <Flmodale data={data}/>
+  );
 }
 
-export default App
+export default App;
