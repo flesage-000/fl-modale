@@ -24,8 +24,8 @@ export const Flmodale = ({data}) => { console.log("data", data);
 
   const customStyles = {
     modale: {
-      backgroundColor: data.style.modaleBackgroundColor || "#FFF",
-      border: data.style.modaleBorder || "solid 1px black",
+      backgroundColor: data.style.modalBackgroundColor || "#FFF",
+      border: data.style.modalBorder || "solid 1px black",
       textAlign: textAlignment(data.style.textAlign),
     },
     overlay: {

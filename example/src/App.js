@@ -6,8 +6,8 @@ import "fl-modale/dist/index.css";
 const App = () => {
   const data = {
     style: {
-      modaleBackgroundColor: null,
-      modaleBorder: null,
+      modalBackgroundColor: null,
+      modalBorder: null,
       overlayBackground: null,
       textAlign: "right"
     },

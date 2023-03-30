@@ -35,8 +35,8 @@ class Example extends Component {
 <!-- Markdown table generator => https://meoki.vn/markdowntable/ -->
 | Key | Type | Default | Description |
 | --- | --- | --- | --- |
-| style.modaleBackgroundColor | `string` | #FFF | Modal background color.<br>All HTML color format are allowed (names, RGB, HEX, HSL, RGBA, or HSLA)<br> - [W3C HTML color doc](https://www.w3schools.com/html/html_colors.asp)<br>- [W3C HTML color picker](https://www.w3schools.com/colors/colors_picker.asp) |
-| style.modaleBorder | `string` | solid 1px black | Modal border.<br> - [CSS border](https://developer.mozilla.org/fr/docs/Web/CSS/border) |
+| style.modalBackgroundColor | `string` | #FFF | Modal background color.<br>All HTML color format are allowed (names, RGB, HEX, HSL, RGBA, or HSLA)<br> - [W3C HTML color doc](https://www.w3schools.com/html/html_colors.asp)<br>- [W3C HTML color picker](https://www.w3schools.com/colors/colors_picker.asp) |
+| style.modalBorder | `string` | solid 1px black | Modal border.<br> - [CSS border](https://developer.mozilla.org/fr/docs/Web/CSS/border) |
 | style.overlayBackground | `string` | rgba(0,0,0,.5) | Modal overlay color.<br>All HTML color format are allowed (names, RGB, HEX, HSL, RGBA, or HSLA)<br> - [W3C HTML color doc](https://www.w3schools.com/html/html_colors.asp)<br>- [W3C HTML color picker](https://www.w3schools.com/colors/colors_picker.asp) |
 | text | `string` | null | The textual content of the modal. |
 | textAlignment | `string` | null | Text alignment. Allow "start", "end", "left", "right", "center", "justify", "justify-all" and "match-parent".<br>- [W3C CSS text-align](https://www.w3schools.com/cssref/pr_text_text-align.php) |
