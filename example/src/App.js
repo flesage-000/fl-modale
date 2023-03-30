@@ -9,6 +9,7 @@ const App = () => {
       modaleBackgroundColor: null,
       modaleBorder: null,
       overlayBackground: null,
+      textAlign: "right"
     },
     text: "Hey Salut !!"
   }
