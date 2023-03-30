@@ -29,4 +29,6 @@ class Example extends Component {
 
 MIT © [flesage-000](https://github.com/flesage-000)
 
-https://www.npmjs.com/package/create-react-library-customforked
+
+## Credits
+- Library initalized with [create-react-library-customforked](https://www.npmjs.com/package/create-react-library-customforked)
