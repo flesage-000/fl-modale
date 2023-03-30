@@ -34,9 +34,10 @@ class Example extends Component {
 ## Configurations options
 |Key|Type|Default|Description|
 |-|-|-|-|
-|modaleBackgroundColor|`string`|#FFF|Modal background color.<br>All HTML color format are allowed (names, RGB, HEX, HSL, RGBA, or HSLA)<br> - [W3C HTML color doc](https://www.w3schools.com/html/html_colors.asp)<br>- [W3C HTML color picker](https://www.w3schools.com/colors/colors_picker.asp)|
-|modaleBorder|`string`|solid 1px black|Modal border.<br> - [CSS border](https://developer.mozilla.org/fr/docs/Web/CSS/border)|
-|overlayBackground|`string`|rgba(0,0,0,.5)|Modal overlay color.<br>All HTML color format are allowed (names, RGB, HEX, HSL, RGBA, or HSLA)<br> - [W3C HTML color doc](https://www.w3schools.com/html/html_colors.asp)<br>- [W3C HTML color picker](https://www.w3schools.com/colors/colors_picker.asp)|
+|style.modaleBackgroundColor|`string`|#FFF|Modal background color.<br>All HTML color format are allowed (names, RGB, HEX, HSL, RGBA, or HSLA)<br> - [W3C HTML color doc](https://www.w3schools.com/html/html_colors.asp)<br>- [W3C HTML color picker](https://www.w3schools.com/colors/colors_picker.asp)|
+|style.modaleBorder|`string`|solid 1px black|Modal border.<br> - [CSS border](https://developer.mozilla.org/fr/docs/Web/CSS/border)|
+|style.overlayBackground|`string`|rgba(0,0,0,.5)|Modal overlay color.<br>All HTML color format are allowed (names, RGB, HEX, HSL, RGBA, or HSLA)<br> - [W3C HTML color doc](https://www.w3schools.com/html/html_colors.asp)<br>- [W3C HTML color picker](https://www.w3schools.com/colors/colors_picker.asp)|
+|text|`string`|null|The textual content of the modal.|
 
 ## License
 
