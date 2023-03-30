@@ -4,7 +4,7 @@ import styles from "./styles.module.css";
 export const Flmodale = ({data}) => { console.log("data", data);
 
   /**
-   *
+   * Ensure text aligment property is normalize according https://www.w3schools.com/cssref/pr_text_text-align.php.
    * @param {string} align
    * @returns {string|null}
    */
