@@ -1,6 +1,6 @@
 # fl-modale
 
-> 
+>
 
 [![NPM](https://img.shields.io/npm/v/fl-modale.svg)](https://www.npmjs.com/package/fl-modale) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
@@ -28,3 +28,5 @@ class Example extends Component {
 ## License
 
 MIT © [flesage-000](https://github.com/flesage-000)
+
+https://www.npmjs.com/package/create-react-library-customforked
