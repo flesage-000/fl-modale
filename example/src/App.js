@@ -8,8 +8,11 @@ const App = () => {
     style: {
       modalBackgroundColor: null,
       modalBorder: null,
+      modalPosition: {
+        type: "fixedWidthHeight",
+      },
       overlayBackground: null,
-      textAlign: "right"
+      textAlign: "left"
     },
     text: "Hey Salut !!"
   }
