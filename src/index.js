@@ -53,24 +53,21 @@ export const Flmodale = ({data}) => { console.log("data", data);
       paddingBottom: pixelUnitRemover(data.paddingBottom, "style.modalPosition.paddingBottom"),
       paddingLeft: pixelUnitRemover(data.paddingLeft, "style.modalPosition.paddingLeft"),
     };
+    // Commons settings
+      customStyles.modal.left = "50%";
+      customStyles.modal.padding = `${data.paddingTop} ${data.paddingRight} ${data.paddingBottom} ${data.paddingLeft}`;
+      customStyles.modal.position = "absolute";
+      customStyles.modal.top = "50%";
 
     if(data.type === "fixedWidthHeight") {
       unitless.height = pixelUnitRemover(data.height, "style.modalPosition.height");
       unitless.width = pixelUnitRemover(data.width, "style.modalPosition.width");
 
       customStyles.modal.height = data.height;
-      customStyles.modal.left = "50%";
-      customStyles.modal.padding = `${data.paddingTop} ${data.paddingRight} ${data.paddingBottom} ${data.paddingLeft}`;
-      customStyles.modal.position = "absolute";
-      customStyles.modal.top = "50%";
       customStyles.modal.width = data.width;
       // Calculate margin to be negative
       customStyles.modal.margin = `${(unitless.height + unitless.paddingTop + unitless.paddingBottom)/2*-1}px 0 0 ${(unitless.width + unitless.paddingRight + unitless.paddingLeft)/2*-1}px`;
     } else if (data.type === "unknownWidthHeight") {
-      customStyles.modal.left = "50%";
-      customStyles.modal.padding = `${data.paddingTop} ${data.paddingRight} ${data.paddingBottom} ${data.paddingLeft}`;
-      customStyles.modal.position = "absolute";
-      customStyles.modal.top = "50%";
       customStyles.modal.transform = "translate(-50%, -50%)";
     } else console.warn("Modal position type '"+ data.type + "' is invalid !\r\nAllowed value are 'fixedWidthHeight'")
   }

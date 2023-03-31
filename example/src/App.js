@@ -9,7 +9,7 @@ const App = () => {
       modalBackgroundColor: null,
       modalBorder: null,
       modalPosition: {
-        type: "unknownWidthHeight",
+        type: "fixedWidthHeight",
       },
       overlayBackground: null,
       textAlign: "left"

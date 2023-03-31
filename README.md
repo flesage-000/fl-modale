@@ -47,7 +47,7 @@ class Example extends Component {
 | style.modalBorder | `string` | solid 1px black | Modal border.<br> - [CSS border](https://developer.mozilla.org/fr/docs/Web/CSS/border) |
 
 ### Customize modal position
-Following the centering tutorial offered by [CssTricks](https://css-tricks.com/centering-css-complete-guide/), the modal has several centering possibilities.
+Following the centering tutorial offered by [CssTricks](https://css-tricks.com/centering-css-complete-guide/), the modal has two centering possibilities.
 | Key | Type | Default | Description |
 | --- | --- | --- | --- |
 |style.modalPosition.type|`string`||Determines how the modal will be centered. Possible values are: <br>- `fixedWidthHeight` for the centering of the modal whose sizes are fixed.<br>- `unknownWidthHeight` for the centering of the modal without sizes.|
