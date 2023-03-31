@@ -50,14 +50,23 @@ class Example extends Component {
 Following the centering tutorial offered by [CssTricks](https://css-tricks.com/centering-css-complete-guide/), the modal has several centering possibilities.
 | Key | Type | Default | Description |
 | --- | --- | --- | --- |
-|style.modalPosition.type|`string`||Determines how the modal will be centered. Possible values are: <br>- `fixedWidthHeight` for the centering of the modal whose sizes are fixed.|
+|style.modalPosition.type|`string`||Determines how the modal will be centered. Possible values are: <br>- `fixedWidthHeight` for the centering of the modal whose sizes are fixed.<br>- `unknownWidthHeight` for the centering of the modal without sizes.|
 
 #### **Is the element of fixed width and height?**
-In this case, the following options are mandatory.
+In this case, the following options can be usefull.
 | Key | Type | Default | Description |
 | --- | --- | --- | --- |
 |style.modalPosition.height|`string`|"260px"|The height of the modal. Must contain the pixel unit.|
 |style.modalPosition.width|`string`|"260px"|The width of the modal. Must contain the pixel unit.|
+|style.modalPosition.paddingTop|`string`|"20px"|The padding top of the modal. Must contain the pixel unit.|
+|style.modalPosition.paddingRight|`string`|"20px"|The padding right of the modal. Must contain the pixel unit.|
+|style.modalPosition.paddingBottom|`string`|"20px"|The padding bottom of the modal. Must contain the pixel unit.|
+|style.modalPosition.paddingLeft|`string`|"20px"|The padding left of the modal. Must contain the pixel unit.|
+
+#### **Is the element of unknown width and height?**
+In this case, the following options can be usefull.
+| Key | Type | Default | Description |
+| --- | --- | --- | --- |
 |style.modalPosition.paddingTop|`string`|"20px"|The padding top of the modal. Must contain the pixel unit.|
 |style.modalPosition.paddingRight|`string`|"20px"|The padding right of the modal. Must contain the pixel unit.|
 |style.modalPosition.paddingBottom|`string`|"20px"|The padding bottom of the modal. Must contain the pixel unit.|
