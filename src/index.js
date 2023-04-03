@@ -1,7 +1,28 @@
-import React from "react";
-import styles from "./styles.module.css";
+import React, { useState } from "react";
+import css from "./flmodal.css";
 
-export const Flmodale = ({data}) => { console.log("data", data);
+export const Flmodale = ({data, isOpen}) => { console.log("data", data, isOpen);
+  const [mdlOpen, setMdlOpen] = useState(isOpen);
+
+  function manageModalState(e) { console.log("handleClose", mdlOpen);
+    // e.preventDefault();
+    setMdlOpen(!mdlOpen);
+    console.log("handleCloseEnd", mdlOpen);
+  }
+
+  const mdlPos = data.style.modalPosition;
+  // Assign custom/default values.
+  mdlPos.paddingTop = mdlPos.paddingTop || "20px";
+  mdlPos.paddingRight = mdlPos.paddingRight || "20px";
+  mdlPos.paddingBottom = mdlPos.paddingBottom || "20px";
+  mdlPos.paddingLeft = mdlPos.paddingLeft || "20px";
+  // Creates an object with unitless values to be used in calculations.
+  const unitless = {
+    paddingTop: pixelUnitRemover(mdlPos.paddingTop, "style.mdlPos.paddingTop"),
+    paddingRight: pixelUnitRemover(mdlPos.paddingRight, "style.mdlPos.paddingRight"),
+    paddingBottom: pixelUnitRemover(mdlPos.paddingBottom, "style.mdlPos.paddingBottom"),
+    paddingLeft: pixelUnitRemover(mdlPos.paddingLeft, "style.mdlPos.paddingLeft"),
+  };
 
   /**
    * Remove the 'px' unit.
@@ -38,30 +59,19 @@ export const Flmodale = ({data}) => { console.log("data", data);
    * Set modal position according https://css-tricks.com/centering-css-complete-guide/ tutorials.
    * @param {object} data
    */
-  function modalPosition(data) { console.log("modalPosition:: data", data);
+  function modalPosition(data) { // console.log("modalPosition:: data", data);
     // Ensure data exist or set default values.
     data.height = data.height || "260px";
     data.width = data.width || "260px";
-    data.paddingTop = data.paddingTop || "20px";
-    data.paddingRight = data.paddingRight || "20px";
-    data.paddingBottom = data.paddingBottom || "20px";
-    data.paddingLeft = data.paddingLeft || "20px";
-    // Creates an object with unitless values to be used in calculations.
-    const unitless = {
-      paddingTop: pixelUnitRemover(data.paddingTop, "style.modalPosition.paddingTop"),
-      paddingRight: pixelUnitRemover(data.paddingRight, "style.modalPosition.paddingRight"),
-      paddingBottom: pixelUnitRemover(data.paddingBottom, "style.modalPosition.paddingBottom"),
-      paddingLeft: pixelUnitRemover(data.paddingLeft, "style.modalPosition.paddingLeft"),
-    };
     // Commons settings
-      customStyles.modal.left = "50%";
-      customStyles.modal.padding = `${data.paddingTop} ${data.paddingRight} ${data.paddingBottom} ${data.paddingLeft}`;
-      customStyles.modal.position = "absolute";
-      customStyles.modal.top = "50%";
+    customStyles.modal.left = "50%";
+    customStyles.modal.padding = `${data.paddingTop} ${data.paddingRight} ${data.paddingBottom} ${data.paddingLeft}`;
+    customStyles.modal.position = "absolute";
+    customStyles.modal.top = "50%";
 
     if(data.type === "fixedWidthHeight") {
-      unitless.height = pixelUnitRemover(data.height, "style.modalPosition.height");
-      unitless.width = pixelUnitRemover(data.width, "style.modalPosition.width");
+      unitless.height = pixelUnitRemover(data.height, "style.mdlPos.height");
+      unitless.width = pixelUnitRemover(data.width, "style.mdlPos.width");
 
       customStyles.modal.height = data.height;
       customStyles.modal.width = data.width;
@@ -73,6 +83,10 @@ export const Flmodale = ({data}) => { console.log("data", data);
   }
 
   const customStyles = {
+    close: {
+      top:  unitless.paddingTop/2*-1 + "px",
+      right: unitless.paddingRight/2*-1 + "px",
+    },
     modal: {
       backgroundColor: data.style.modalBackgroundColor || "#FFF",
       border: data.style.modalBorder || "solid 1px black",
@@ -82,15 +96,25 @@ export const Flmodale = ({data}) => { console.log("data", data);
       backgroundColor: data.style.overlayBackground || "rgba(0,0,0,.5)",
     },
   };
-  modalPosition(data.style.modalPosition);
+
+  modalPosition(mdlPos);
 
   return (
-    <div  className={styles.flmodal}
-          style={customStyles.overlay}>
-      <div  className={styles.modal}
-            style={customStyles.modal}>
-        {data.text}
-      </div>
+    <div>
+      {/* { mdlOpen && */}<p>=&gt; {mdlOpen}&lt;=</p>
+        <div  className={mdlOpen ? css.flmodal : css.flmodalClose}
+              style={customStyles.overlay}>
+          <div  className={css.modal}
+                style={customStyles.modal}>
+            <div  className={css.content}>
+              <button className={css.close}
+                      style={customStyles.close}
+                      onClick={manageModalState}>&#10060;</button>
+              {data.text}
+            </div>
+          </div>
+        </div>
+      {/* } */}
     </div>
   );
 }
