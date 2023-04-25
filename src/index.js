@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import css from "./flmodal.css";
 
-export const Flmodale = ({data, isOpen}) => { console.log("data", data, isOpen);
-  const [mdlOpen, setMdlOpen] = useState(isOpen);
+export const Flmodale = ({data, isOpen, setMdlOpen}) => { console.log("data", data, isOpen);
+  // const [mdlOpen, setMdlOpen] = useState(isOpen);
 
-  function manageModalState(e) { console.log("handleClose", mdlOpen);
+  function manageModalState(e) { console.log("handleClose", isOpen);
     // e.preventDefault();
-    setMdlOpen(!mdlOpen);
-    console.log("handleCloseEnd", mdlOpen);
+    setMdlOpen(!isOpen);
+    console.log("handleCloseEnd", isOpen);
   }
 
   const mdlPos = data.style.modalPosition;
@@ -101,8 +101,8 @@ export const Flmodale = ({data, isOpen}) => { console.log("data", data, isOpen);
 
   return (
     <div>
-      {/* { mdlOpen && */}<p>=&gt; {mdlOpen}&lt;=</p>
-        <div  className={mdlOpen ? css.flmodal : css.flmodalClose}
+      {/* { mdlOpen && */}<p>=&gt; {isOpen.toString()}&lt;=</p>
+        <div  className={isOpen ? css.flmodal : css.flmodalClose}
               style={customStyles.overlay}>
           <div  className={css.modal}
                 style={customStyles.modal}>

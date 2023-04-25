@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 
 import { Flmodale } from "fl-modale";
+// import { Flmodale } from "../../src";
 import "fl-modale/dist/index.css";
+import "./index.css";
 
 const App = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const data = {
     style: {
       modalBackgroundColor: null,
@@ -20,8 +22,8 @@ const App = () => {
 
   return (
     <>
-      <Flmodale data={data} isOpen={isOpen}/>
-      <button onClick={() => {setIsOpen(true)}}>Ouvrir</button>
+      <Flmodale data={data} isOpen={isOpen} setMdlOpen={setIsOpen}/>
+      <button onClick={() => {setIsOpen(true)}}>Ouvrir{isOpen.toString()}</button>
     </>
   );
 }
