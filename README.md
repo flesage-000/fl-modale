@@ -13,20 +13,22 @@ npm install --save fl-modale
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import React from "react";
 
-import Flmodale from 'fl-modale'
-import 'fl-modale/dist/index.css'
+import { Flmodale } from "fl-modale";
+import "fl-modale/dist/index.css";
 
-class Example extends Component {
+function modalExample() {
+  const [isOpen, setIsOpen] = useState(true);
   const data = {
     style: {
       overlayBackground: rgba(0,0,0,.75)
-    }
+    },
+    text: "Modal example !"
   }
 
   render() {
-    return <Flmodale data={data} />
+    return <Flmodale data={data} isOpen={isOpen} setMdlOpen={setIsOpen}/>
   }
 }
 ```

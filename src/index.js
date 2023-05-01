@@ -1,21 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import css from "./flmodal.css";
 
-export const Flmodale = ({data, isOpen, setMdlOpen}) => { console.log("data", data, isOpen);
-  // const [mdlOpen, setMdlOpen] = useState(isOpen);
+export const Flmodale = ({data, isOpen, setMdlOpen}) => {
 
-  function manageModalState(e) { console.log("handleClose", isOpen);
-    // e.preventDefault();
+  /**
+   * Manage the state open and close.
+   * @param {object} e The click event object
+   */
+  function manageModalState(e) {
     setMdlOpen(!isOpen);
-    console.log("handleCloseEnd", isOpen);
   }
 
   const mdlPos = data.style.modalPosition;
   // Assign custom/default values.
-  mdlPos.paddingTop = mdlPos.paddingTop || "20px";
-  mdlPos.paddingRight = mdlPos.paddingRight || "20px";
-  mdlPos.paddingBottom = mdlPos.paddingBottom || "20px";
-  mdlPos.paddingLeft = mdlPos.paddingLeft || "20px";
+  mdlPos.paddingTop = mdlPos.paddingTop || "40px";
+  mdlPos.paddingRight = mdlPos.paddingRight || "40px";
+  mdlPos.paddingBottom = mdlPos.paddingBottom || "40px";
+  mdlPos.paddingLeft = mdlPos.paddingLeft || "40px";
   // Creates an object with unitless values to be used in calculations.
   const unitless = {
     paddingTop: pixelUnitRemover(mdlPos.paddingTop, "style.mdlPos.paddingTop"),
@@ -30,7 +31,7 @@ export const Flmodale = ({data, isOpen, setMdlOpen}) => { console.log("data", da
    * @param {string} t
    * @returns {number}
    */
-  function pixelUnitRemover(v, t) { // console.log("pixelUnitRemover::", v, t);
+  function pixelUnitRemover(v, t) {
     const value = v.split("px")[0]*1;
     if (typeof value !== "number") console.warn(`The value of '${t}' is wrong!`);
     return value;
@@ -59,7 +60,7 @@ export const Flmodale = ({data, isOpen, setMdlOpen}) => { console.log("data", da
    * Set modal position according https://css-tricks.com/centering-css-complete-guide/ tutorials.
    * @param {object} data
    */
-  function modalPosition(data) { // console.log("modalPosition:: data", data);
+  function modalPosition(data) {
     // Ensure data exist or set default values.
     data.height = data.height || "260px";
     data.width = data.width || "260px";
@@ -101,20 +102,19 @@ export const Flmodale = ({data, isOpen, setMdlOpen}) => { console.log("data", da
 
   return (
     <div>
-      {/* { mdlOpen && */}<p>=&gt; {isOpen.toString()}&lt;=</p>
-        <div  className={isOpen ? css.flmodal : css.flmodalClose}
-              style={customStyles.overlay}>
-          <div  className={css.modal}
-                style={customStyles.modal}>
-            <div  className={css.content}>
-              <button className={css.close}
-                      style={customStyles.close}
-                      onClick={manageModalState}>&#10060;</button>
-              {data.text}
-            </div>
+      <div  className={isOpen ? css.flmodal : css.flmodalClose}
+            style={customStyles.overlay}>
+        <div  className={css.modal}
+              style={customStyles.modal}>
+          <div  className={css.content}>
+            <button className={css.close}
+                    style={customStyles.close}
+                    type="button"
+                    onClick={manageModalState}>&#10060;</button>
+            {data.text}
           </div>
         </div>
-      {/* } */}
+      </div>
     </div>
   );
 }
