@@ -85,8 +85,8 @@ export const Flmodale = ({data, isOpen, setMdlOpen}) => {
 
   const customStyles = {
     close: {
-      top:  unitless.paddingTop/2*-1 + "px",
-      right: unitless.paddingRight/2*-1 + "px",
+      top:  unitless.paddingTop/1.5*-1 + "px",
+      right: unitless.paddingRight/1.5*-1 + "px",
     },
     modal: {
       backgroundColor: data.style.modalBackgroundColor || "#FFF",
